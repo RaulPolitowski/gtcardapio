@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "timestamp": "${new Date().toISOString()}",
+  "appState": {
+    "products": ${JSON.stringify(sampleProducts, null, 2)},
+    "additionals": ${JSON.stringify(sampleAdditionals, null, 2)},
+    "orders": ${JSON.stringify(sampleOrders, null, 2)},
+    "customers": ${JSON.stringify(sampleCustomers, null, 2)},
+    "systemSettings": {
+      "whatsApp": {
+        "number": "",
+        "messageTemplate": "Olá! Seu pedido foi recebido:\\n\\n{items}\\n\\nTotal: R$ {total}\\n\\nObrigado pela preferência!"
+      },
+      "store": {
+        "subtitle": "Sabor e tecnologia em cada pedido",
+        "showProductImages": true,
+        "businessHours": {
+          "Segunda-feira": { "open": "10:00", "close": "22:00" },
+          "Terça-feira": { "open": "10:00", "close": "22:00" },
+          "Quarta-feira": { "open": "10:00", "close": "22:00" },
+          "Quinta-feira": { "open": "10:00", "close": "22:00" },
+          "Sexta-feira": { "open": "10:00", "close": "23:00" },
+          "Sábado": { "open": "10:00", "close": "23:00" },
+          "Domingo": { "open": "12:00", "close": "20:00" }
+        },
+        "specialDates": []
+      }
+    }
+  },
+  "files": {
+    "src/api/index.ts": ${JSON.stringify(require('fs').readFileSync('src/api/index.ts', 'utf8'))},
+    "src/App.tsx": ${JSON.stringify(require('fs').readFileSync('src/App.tsx', 'utf8'))},
+    "src/index.css": ${JSON.stringify(require('fs').readFileSync('src/index.css', 'utf8'))},
+    "src/types/index.ts": ${JSON.stringify(require('fs').readFileSync('src/types/index.ts', 'utf8'))},
+    "src/pages/Admin.tsx": ${JSON.stringify(require('fs').readFileSync('src/pages/Admin.tsx', 'utf8'))},
+    "src/pages/MyOrders.tsx": ${JSON.stringify(require('fs').readFileSync('src/pages/MyOrders.tsx', 'utf8'))},
+    "src/components/Menu.tsx": ${JSON.stringify(require('fs').readFileSync('src/components/Menu.tsx', 'utf8'))},
+    "src/components/ProductDetails.tsx": ${JSON.stringify(require('fs').readFileSync('src/components/ProductDetails.tsx', 'utf8'))}
+  }
+}
